@@ -1,15 +1,16 @@
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import TabStack from './TabStack';
 import AuthStack from './AuthStack';
+import {useMMKVString} from 'react-native-mmkv';
 
 const Navigation = () => {
-  const authenticated = true
+  const [token, setToken] = useMMKVString('token');
 
   return (
     <NavigationContainer>
-      {authenticated ? <TabStack /> : <AuthStack />}
+      {token ? <TabStack /> : <AuthStack />}
     </NavigationContainer>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
