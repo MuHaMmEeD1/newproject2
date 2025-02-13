@@ -8,7 +8,8 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      {token ? <TabStack /> : <AuthStack />}
+      {/* {token ? <TabStack /> : <AuthStack />} */}
+      {true ? <TabStack /> : <AuthStack />}
     </NavigationContainer>
   );
 };

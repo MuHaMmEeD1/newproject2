@@ -4,12 +4,14 @@ import Users from '../screens/users/Users';
 import Todos from '../screens/todos/Todos';
 import Header from './components/Header';
 import UserDetails from '../screens/users/UserDetails';
+import Gallery from '../screens/gallery/Gallery';
 
 const Stack = createNativeStackNavigator();
 
 const HomeStack = () => {
   return (
     <Stack.Navigator
+      initialRouteName="Gallery"
       screenOptions={{
         header: () => (
           <View className="bg-white border-b border-gray-200 shadow-sm">
@@ -32,6 +34,11 @@ const HomeStack = () => {
         name="Todos"
         component={Todos}
         options={{animation: 'fade_from_bottom'}}
+      />
+      <Stack.Screen
+        name="Gallery"
+        component={Gallery}
+        //options={{animation: 'fade_from_bottom'}}
       />
     </Stack.Navigator>
   );
